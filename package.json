@@ -1,0 +1,21 @@
+{
+  "name": "alps",
+  "version": "0.0.1",
+  "description": "A tool for orchestrating multiple apps and microservices in development and testing.",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sanctuarycomputer/alps.git"
+  },
+  "author": "Hugh Francis <me@hughfrancis.me> (http://hughfrancis.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sanctuarycomputer/alps/issues"
+  },
+  "homepage": "https://github.com/sanctuarycomputer/alps#readme",
+  "bin": {
+    "alps": "index.js"
+  }
+}
