@@ -17,5 +17,8 @@
   "homepage": "https://github.com/sanctuarycomputer/alps#readme",
   "bin": {
     "alps": "index.js"
+  },
+  "dependencies": {
+    "cli": "^1.0.0"
   }
 }
