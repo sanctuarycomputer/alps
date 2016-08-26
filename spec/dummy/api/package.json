@@ -1,8 +1,9 @@
 {
-  "name": "alps",
+  "name": "alps-dummy-api",
   "version": "0.0.1",
-  "description": "A tool for orchestrating multiple apps and microservices in development and testing.",
+  "description": "A dummy API for testing Alps.",
   "scripts": {
+    "start": "node ./index.js",
     "test": "npm test"
   },
   "repository": {
@@ -15,11 +16,7 @@
     "url": "https://github.com/sanctuarycomputer/alps/issues"
   },
   "homepage": "https://github.com/sanctuarycomputer/alps#readme",
-  "bin": {
-    "alps": "index.js"
-  },
   "dependencies": {
-    "blessed": "^0.1.81",
-    "cli": "^1.0.0"
+    "hapi": "^14.2.0"
   }
 }

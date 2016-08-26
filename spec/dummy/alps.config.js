@@ -1,3 +1,8 @@
+const Node = require('../../lib/Node');
+
 module.exports = {
-  projects: []
+  projects: [
+    new Node('api'),
+    new Node('auth')
+  ]
 };

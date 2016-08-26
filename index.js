@@ -22,7 +22,8 @@ const BOILERPLATE =`module.exports = {
 
 try {
   let options = cli.parse({
-    projects: ['p', 'Which projects to run against', 'string', 'all']
+    projects: ['p', 'Which projects to run against', 'string', 'all'],
+    cli: ['c', 'Use the command line instead of the dashboard', 'boolean', false]
   }, VALID_COMMANDS);
 
   if (cli.command === 'init') {
@@ -40,10 +41,8 @@ try {
     fs.accessSync(configPath, fs.F_OK);
     const Config = require(configPath);
     Alps.validateConfig(Config, cli.command)
-        .setup(Config.projects)
-        .runCommand(cli.command, options)
-        .then(() => Alps.log('Finished!'))
-        .catch(error => Alps.log(error));
+        .setup(Config.projects, rootPath, options.cli)
+        .runCommand(cli.command, options);
   }
 
 } catch (e) {
