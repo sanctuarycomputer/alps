@@ -18,6 +18,7 @@
   "bin": {
     "alps": "index.js"
   },
+  "main": "main.js",
   "dependencies": {
     "blessed": "^0.1.81",
     "cli": "^1.0.0"

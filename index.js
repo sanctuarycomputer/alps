@@ -8,6 +8,8 @@ const Alps       = require('./lib/Alps');
 const rootPath   = path.resolve(process.cwd());
 const configPath = `${rootPath}/alps.config.js`;
 
+// Kill: kill $(lsof -t -i:8080)
+
 const VALID_COMMANDS = {
   init: 'Creates an alps.config.js in the current directory',
   install: 'Installs the selected projects',
@@ -42,7 +44,9 @@ try {
     const Config = require(configPath);
     Alps.validateConfig(Config, cli.command)
         .setup(Config.projects, rootPath, options.cli)
-        .runCommand(cli.command, options);
+        .runCommand(cli.command, options)
+        .then(() => Alps.log('Finished!'))
+        .catch(() => Alps.log('Errored.'));
   }
 
 } catch (e) {
@@ -67,4 +71,3 @@ try {
       Alps.log(`An unexpected error occured: ${e}`, 'fatal');
   }
 }
-
